@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vaaruni Suresh</title>
-<meta name="description" content="Personal site: neuroscience, classical dancer, artist and writer.">
+<meta name="description" content="Personal site: neuroscience researcher, classical dancer, artist and writer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,600&family=Mukta:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#15121f;        /* deep plum-indigo */
+  --bg:#15121f;
   --surface:#1e1a2b;
   --ink:#ece4ee;
   --muted:#a89fb4;
   --line:#352f47;
-  --accent:#d78fa3;    /* soft rose */
-  --accent2:#8fa3d7;   /* dusty periwinkle */
+  --accent:#d78fa3;
+  --accent2:#8fa3d7;
   --display:"Cormorant Garamond",Georgia,serif;
   --body:"Mukta","Segoe UI",Arial,sans-serif;
 }
@@ -29,12 +29,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent2);outline-of
 h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;margin:0}
 p{max-width:38em;margin:0 0 1.1rem}
 
-/* Your motifs: pattern.png tiles faintly behind every page.
-   background-size sets how spread out they are; opacity sets how strong. */
 .bgpat{position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:url("pattern.png");background-repeat:repeat;background-size:680px;opacity:.10}
+  background-image:url("orn3.png");background-repeat:repeat;background-size:680px;opacity:.10}
 
-/* layout: side menu, no header bar */
 .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;display:grid;grid-template-columns:200px 1fr;gap:3rem;padding:0 1.5rem}
 aside{position:sticky;top:0;align-self:start;height:100vh;padding:3rem 0;display:flex;flex-direction:column;gap:2rem}
 .logo{font-family:var(--display);font-style:italic;font-size:1.9rem;line-height:1.1;color:var(--ink);text-decoration:none}
@@ -53,16 +50,10 @@ main{padding:3.5rem 0 4rem;min-width:0}
 .hero .orn{width:min(210px,60%);margin:0 0 1.2rem}
 h2{font-size:1.9rem;margin:2.6rem 0 1rem}
 
-/* home */
 .hero{min-height:44vh;display:flex;flex-direction:column;justify-content:center}
 .hero h1{font-size:clamp(3.2rem,9vw,6.2rem);font-style:italic;letter-spacing:-.01em}
 .hero .lead{font-size:1.3rem;color:var(--muted);margin:1.2rem 0 2rem}
-.go{display:flex;gap:.8rem;flex-wrap:wrap}
-.btn{padding:.65rem 1.4rem;border-radius:99px;text-decoration:none;border:1.5px solid var(--accent);color:var(--accent)}
-.btn.f{background:var(--accent);color:#2a1220;font-weight:600}
-.btn:hover{border-color:var(--accent2)}
 
-/* section tiles on the home page */
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.3rem;margin:1rem 0 2rem}
 .tile{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;color:var(--ink)}
 .tile:hover{border-color:var(--accent)}
@@ -71,7 +62,6 @@ h2{font-size:1.9rem;margin:2.6rem 0 1rem}
 .tile h2{font-size:1.5rem;margin:0 0 .2rem}
 .tile p{margin:0;color:var(--muted);font-size:1rem;line-height:1.5}
 
-/* entries */
 .entry{padding:1.3rem 0 1.3rem 1.4rem;border-left:2px solid var(--line);position:relative}
 .entry::before{content:"";position:absolute;left:-6px;top:1.9rem;width:10px;height:10px;border-radius:50%;background:var(--accent)}
 .entry h3{font-size:1.45rem}
@@ -89,6 +79,7 @@ h2{font-size:1.9rem;margin:2.6rem 0 1rem}
 
 .tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;list-style:none}
 .tags li{padding:.25rem .9rem;border:1px solid var(--line);border-radius:99px;background:var(--surface);font-size:.98rem}
+.skillgroup{color:var(--muted);margin:1.2rem 0 .5rem;font-size:1rem}
 
 .piece{padding:1.1rem 0;border-top:1px solid var(--line)}
 .piece h3{font-size:1.4rem}
@@ -96,7 +87,6 @@ h2{font-size:1.9rem;margin:2.6rem 0 1rem}
 
 footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-size:.95rem;padding:2rem 1rem 3rem}
 
-/* small screens: menu moves to the top as plain text links */
 @media (max-width:760px){
   .wrap{grid-template-columns:1fr;gap:0}
   aside{position:static;height:auto;padding:1.5rem 0 0;gap:1rem}
@@ -114,7 +104,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
 
 <div class="wrap">
 <aside>
-  <a class="logo" href="#home">Your Name</a>
+  <a class="logo" href="#home">Vaaruni Suresh</a>
   <nav aria-label="Main">
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -131,96 +121,72 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
 
 <section class="page" id="home" aria-labelledby="h-home">
   <div class="hero">
-    <img class="orn" src="ornaments/orn8.png" alt="">
-    <h1 id="h-home">Your Name</h1>
-    <p class="lead">I study [your focus, e.g. how the brain learns movement], and I’m applying to neuroscience PhD programs for Fall 2027. I’m also a classical dancer, an artist, and a writer.</p>
+    <img class="orn" src="ornaments/orn5.png" alt="">
+    <h1 id="h-home">Vaaruni Suresh</h1>
+    <p class="lead">I graduated with an MS in Biomedical Engineering from Carnegie Mellon in 2025. I use neuroimaging and electrophysiology to study ageing and disease-related changes to human brain networks and behaviour. I also am a classical dancer, and try my hand at art and writing from time to time.</p>
   </div>
   <div class="tiles">
-    <a class="tile" href="#about"><span class="pic" style="background-image:url('images/about.jpg'),url('ornaments/orn3.png')"></span><span class="t"><h2>About me</h2><p>Who I am and how I got into neuroscience.</p></span></a>
-    <a class="tile" href="#research"><span class="pic" style="background-image:url('images/research.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Research</h2><p>My interests and lab experience.</p></span></a>
-    <a class="tile" href="#education"><span class="pic" style="background-image:url('images/education.jpg'),url('ornaments/orn6.png')"></span><span class="t"><h2>Education</h2><p>Degrees, coursework, and skills.</p></span></a>
-    <a class="tile" href="#dance"><span class="pic" style="background-image:url('images/dance.jpg'),url('ornaments/orn8.png')"></span><span class="t"><h2>Dance</h2><p>Training, performances, and videos.</p></span></a>
-    <a class="tile" href="#art"><span class="pic" style="background-image:url('images/art.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Art</h2><p>Drawings, paintings, and experiments.</p></span></a>
-    <a class="tile" href="#writing"><span class="pic" style="background-image:url('images/writing.jpg'),url('ornaments/orn6.png')"></span><span class="t"><h2>Writing</h2><p>Essays, poems, and stories.</p></span></a>
+    <a class="tile" href="#about"><span class="pic" style="background-image:url('images/about.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>About me</h2><p></p>
+    <a class="tile" href="#research"><span class="pic" style="background-image:url('images/research.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Research</h2><p></p>
+    <a class="tile" href="#dance"><span class="pic" style="background-image:url('images/dance.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Dance</h2><p>Ballet, Bharatanatyam, and teaching.</p></span></a>
+    <a class="tile" href="#art"><span class="pic" style="background-image:url('images/art.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Art</h2><p>Experiments in art.</p></span></a>
+    <a class="tile" href="#writing"><span class="pic" style="background-image:url('images/writing.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Writing</h2><p>
   </div>
 </section>
 
 <section class="page" id="about" aria-labelledby="h-about">
   <h1 id="h-about">About me</h1>
   <img class="orn" src="ornaments/orn3.png" alt="">
-  <p class="sub">The short version of who I am.</p>
-  <p>I’m a [major] graduate from [University]. I got into neuroscience when [the moment or question that pulled you in].</p>
-  <p>I’ve trained in [dance style, e.g. Bharatanatyam] for [X years], and that practice shapes how I think about [movement, memory, attention, timing]. [One honest sentence linking dance or art to your science.]</p>
-  <p>Outside the lab I paint, draw, and write. You can find that work on the Art and Writing pages.</p>
+  <p class="sub"></p>
+  <p>I am [help]<p>
+  <p>My research has moved across scales: from regenerating Hydra, to brain-computer interfaces, to diffusion MRI of stroke, and now to rat electrophysiology and EEG-fMRI in clinical populations. I also build my own tools, from Arduino stimulators to custom circuit boards.</p>
+  <p>I’ve trained in classical Ballet and Bharatanatyam for over fifteen years and dance with Lakshyam Dance Company. [One honest sentence linking dance or art to your science.] I also make art and write, and you can find that work on the Art and Writing pages.</p>
 </section>
 
 <section class="page" id="research" aria-labelledby="h-research">
   <h1 id="h-research">Research</h1>
   <img class="orn" src="ornaments/orn5.png" alt="">
-  <p class="sub">What I want to work on, and what I’ve done so far.</p>
-
+  
   <h2>Research interests</h2>
   <div class="grid">
-    <div class="card"><h3>Interest one</h3><p>The question you care about and why it matters, in one or two sentences.</p></div>
-    <div class="card"><h3>Interest two</h3><p>The systems, model organisms, or techniques you want to use.</p></div>
-    <div class="card"><h3>Interest three</h3><p>Optional. Name labs or faculty whose work connects to this.</p></div>
+    <div class="card"><h3>Ageing, cognition and the senses</h3><p>How sensory integration, region specific activity, and whole-brain networks change with age and dysfunction.</p></div>
+    <div class="card"><h3>Neuroimaging</h3><p>How fMRI, EEG and diffusion MRI can be integrated to study the brain and used to inform brain-machine interfaces.</p></div>
+    <div class="card"><h3>Tools for neuroscience</h3><p>Building hardware and pipelines to measure the brain, from behavioural arenas and custom circuit boards to BCIs and EEG analysis.</p></div>
   </div>
 
-  <h2>Research experience</h2>
+  <h2>Projects</h2>
   <div class="entry">
-    <h3>Research Assistant</h3>
-    <div class="meta">[PI name] Lab, [University] · Jun 2025 to present</div>
-    <ul>
-      <li>The question your project asks, in one line.</li>
-      <li>What you did yourself: methods, analysis, tools. Add numbers where you can.</li>
-      <li>The outcome: poster, dataset, manuscript in preparation.</li>
-    </ul>
+    <h3>Parkinson’s Disease Diagnostic Classification</h3>
+    <div class="meta">Carnegie Mellon · Sept to Dec 2024</div>
   </div>
   <div class="entry">
-    <h3>Undergraduate Thesis</h3>
-    <div class="meta">[Department], [University] · Jan to May 2025</div>
+    <h3>EEG-based BCI</h3>
     <ul>
-      <li>Topic and main finding.</li>
-      <li>Skills you built: experimental design, statistics, writing.</li>
     </ul>
   </div>
 </section>
 
 <section class="page" id="education" aria-labelledby="h-edu">
-  <h1 id="h-edu">Education and skills</h1>
+  <h1 id="h-edu">Education, teaching and outreach</h1>
   <img class="orn" src="ornaments/orn6.png" alt="">
-  <p class="sub">Where I’ve studied and what I can do.</p>
+
   <div class="entry">
-    <h3>B.Sc. in [Major]</h3>
-    <div class="meta">[University] · 2021 to 2025 · GPA [x.xx]</div>
-    <ul>
-      <li>Relevant coursework: neuroscience, statistics, linear algebra, programming.</li>
-      <li>Honors, scholarships, teaching assistant roles.</li>
+    <h3>MS in Biomedical Engineering</h3>
+    <div class="meta">Carnegie Mellon University, Pittsburgh · Graduated May 2025 </div>
     </ul>
   </div>
-  <h2>Skills</h2>
-  <ul class="tags">
-    <li>Python</li><li>MATLAB</li><li>R</li><li>Statistics</li>
-    <li>Electrophysiology</li><li>Imaging</li><li>Data analysis</li><li>Scientific writing</li>
-  </ul>
-</section>
+  <div class="entry">
+    <h3>BSc in Biology, minor in Data, Democracy and Development</h3>
+    <div class="meta">Azim Premji University, Bangalore · June 2023</div>
+  </div>
 
-<section class="page" id="dance" aria-labelledby="h-dance">
-  <h1 id="h-dance">Dance</h1>
-  <img class="orn" src="ornaments/orn8.png" alt="">
-  <p class="sub">[Style, e.g. Bharatanatyam] · [X years] of training</p>
-  <p>Write a few sentences here about your training, your guru or school, and what dance gives you that nothing else does.</p>
-  <div class="entry">
-    <h3>Arangetram</h3>
-    <div class="meta">[Year] · [City]</div>
-    <ul><li>One line about the milestone and what it took.</li></ul>
-  </div>
-  <div class="entry">
-    <h3>Performance or festival</h3>
-    <div class="meta">[Venue] · [Year]</div>
-    <ul><li>What you performed or taught.</li></ul>
-  </div>
-  <p>To add a video, upload it to YouTube and paste the link here: <a href="https://www.youtube.com/">Watch a performance</a>.</p>
+  <h2>Skills</h2>
+  <p class="skillgroup">Neuroimaging and EEG</p>
+  <ul class="tags"><li>BOLD fMRI</li><li>Diffusion MRI tractography</li><li>EEG</li><li>fMRIPrep</li><li>FSL</li><li>DSI Studio</li><li>MNE-Python</li></ul>
+  <p class="skillgroup">Programming</p>
+  <ul class="tags"><li>Python</li><li>MATLAB</li><li>R</li></ul>
+  <p class="skillgroup">Hardware</p>
+  <ul class="tags"><li>Custom PCB design (KiCAD)</li><li>Arduino</li><li>CAD</li></ul>
 </section>
 
 <section class="page" id="art" aria-labelledby="h-art">
@@ -253,15 +219,14 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
 <section class="page" id="contact" aria-labelledby="h-contact">
   <h1 id="h-contact">Contact</h1>
   <img class="orn" src="ornaments/orn3.png" alt="">
-  <p class="sub">I’m glad to talk with faculty and current students.</p>
-  <p><a href="mailto:you@university.edu">you@university.edu</a></p>
-  <p><a href="cv.pdf">Download my CV</a> · <a href="https://www.linkedin.com/in/your-handle">LinkedIn</a> · <a href="https://github.com/your-username">GitHub</a> · <a href="https://scholar.google.com/">Google Scholar</a></p>
+  <p><a href="mailto:vaaruni16@gmail.com">vaaruni16@gmail.com</a></p>
+  <p><a href="cv.pdf">Download my CV</a> · <a href="https://github.com/runisuresh">GitHub</a> 
 </section>
 
 </main>
 </div>
 
-<footer>© <span id="yr"></span> Your Name</footer>
+<footer>© <span id="yr"></span> Vaaruni Suresh</footer>
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
