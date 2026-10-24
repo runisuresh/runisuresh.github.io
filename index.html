@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vaaruni Suresh</title>
-<meta name="description" content="Vaaruni Suresh: neuroscience researcher, classical dancer, artist and writer.">
+<meta name="description" content="Vaaruni Suresh: Personal Website">
 <script>
-/* Set theme before first paint: saved choice, else the visitor's system setting */
-(function(){
+
+  (function(){
   var t=null;
   try{t=localStorage.getItem('theme')}catch(e){}
   if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
@@ -92,9 +92,7 @@ h2:first-of-type{margin-top:1.4rem}
 .photo figcaption{color:var(--muted);font-size:.95rem;margin-top:.4rem}
 .portrait{max-width:22rem}
 
-/* Scrolling tiles: swipe or scroll sideways; hover (or tap/focus) reveals the description */
 .rail{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.3rem .2rem 1rem;margin:0 0 1rem;scrollbar-color:var(--accent) var(--line);scrollbar-width:thin}
-/* Wider, shorter tiles: width min(460px,85%), shape 3:2 */
 .slide{position:relative;flex:0 0 min(460px,85%);aspect-ratio:3/2;margin:0;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--pic);scroll-snap-align:start;cursor:pointer}
 .slide img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s}
 .slide figcaption{position:absolute;inset:auto 0 0 0;padding:2.2rem 1rem .9rem;background:linear-gradient(to top,rgba(21,18,31,.94) 60%,transparent);color:#ece4ee;font-size:.98rem;line-height:1.45;opacity:0;transform:translateY(.6rem);transition:opacity .25s,transform .25s}
@@ -168,7 +166,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
 <section class="page" id="about" aria-labelledby="h-about">
   <h1 id="h-about">About me</h1>
   <img class="orn" src="ornaments/orn3.png" alt="">
-  <figure class="photo portrait"><img src="images/portrait.jpg" alt="Vaaruni smiling"></figure>
+  <figure class="photo portrait"><img src="images/portrait.jpg"></figure>
 
   <p>I’m a neuroscientist and engineer who studies how brain networks change with age and disease, and I like building the tools that make that possible. Memory is central to everything I do: in the dance studio, where I love learning choreographies that are decades old and making them my own; in the lab, analysing neural data; and at my desk, writing essays on how lives are lived and remembered. You can find bits of each of these here, and I’d love to hear from you if any of them interest you. <a href="#contact">Get in touch</a>.</p>
   <p>My work has moved across scales, from regenerating <em>Hydra</em> to brain-computer interfaces, diffusion MRI of stroke, rat electrophysiology, and now EEG-fMRI in clinical populations.</p>
