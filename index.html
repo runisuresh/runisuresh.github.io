@@ -1,41 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vaaruni Suresh</title>
 <meta name="description" content="Vaaruni Suresh: neuroscience researcher, classical dancer, artist and writer.">
+<script>
+/* Set theme before first paint: saved choice, else the visitor's system setting */
+(function(){
+  var t=null;
+  try{t=localStorage.getItem('theme')}catch(e){}
+  if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
+  document.documentElement.setAttribute('data-theme',t);
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,600&family=Mukta:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-:root{
+:root,:root[data-theme="dark"]{
+  color-scheme:dark;
   --bg:#15121f; --surface:#1e1a2b; --ink:#ece4ee; --muted:#a89fb4; --line:#352f47;
-  --accent:#d78fa3; --accent2:#8fa3d7;
+  --accent:#d78fa3; --accent2:#8fa3d7; --pic:#1a1626; --pat:.08;
   --display:"Cormorant Garamond",Georgia,serif;
   --body:"Mukta","Segoe UI",Arial,sans-serif;
 }
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#fbf7f9; --surface:#ffffff; --ink:#2a2236; --muted:#675d75; --line:#e3d8e1;
+  --accent:#a8406a; --accent2:#3f55a8; --pic:#efe7ee; --pat:.12;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.08rem;line-height:1.75;min-height:100vh}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.08rem;line-height:1.75;min-height:100vh;transition:background .25s,color .25s}
 a{color:var(--accent)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+a:focus-visible,button:focus-visible,.slide:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
 h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;margin:0}
 p{max-width:38em;margin:0 0 1.1rem}
 ul{margin:0}
 
-.bgpat{position:fixed;inset:0;z-index:0;pointer-events:none;background:url("ornaments/orn5.png") repeat;background-size:680px;opacity:.08}
+.bgpat{position:fixed;inset:0;z-index:0;pointer-events:none;background:url("ornaments/orn5.png") repeat;background-size:680px;opacity:var(--pat)}
+
+/* Sky header */
+.banner{position:relative;z-index:1;height:clamp(150px,28vh,280px);background:linear-gradient(to bottom,transparent 55%,var(--bg)),url("images/sky.JPG") center/cover no-repeat var(--pic)}
 
 .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;display:grid;grid-template-columns:190px minmax(0,1fr);gap:3rem;padding:0 1.5rem}
-aside{position:sticky;top:0;align-self:start;height:100vh;padding:3rem 0;display:flex;flex-direction:column;gap:2rem}
+aside{position:sticky;top:0;align-self:start;height:100vh;padding:2rem 0;display:flex;flex-direction:column;gap:1.6rem}
 .logo{font-family:var(--display);font-style:italic;font-size:1.9rem;line-height:1.1;color:var(--ink);text-decoration:none}
 nav{display:flex;flex-direction:column;gap:.35rem}
 nav a{color:var(--muted);text-decoration:none;padding:.1rem 0 .1rem .9rem;border-left:2px solid transparent}
 nav a:hover{color:var(--ink)}
 nav a[aria-current="page"]{color:var(--accent);border-left-color:var(--accent)}
 
-main{padding:3.5rem 0 4rem;min-width:0}
+.toggle{align-self:flex-start;font:inherit;font-size:.95rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:.3rem .95rem;cursor:pointer}
+.toggle:hover{border-color:var(--accent)}
+
+main{padding:2.5rem 0 4rem;min-width:0}
 .page{display:none}
 .page.on{display:block;animation:in .4s ease}
 @keyframes in{from{opacity:0}to{opacity:1}}
@@ -46,7 +67,7 @@ main{padding:3.5rem 0 4rem;min-width:0}
 h2{font-size:1.8rem;margin:2.4rem 0 1rem}
 h2:first-of-type{margin-top:1.4rem}
 
-.hero{min-height:40vh;display:flex;flex-direction:column;justify-content:center}
+.hero{min-height:36vh;display:flex;flex-direction:column;justify-content:center}
 .hero .orn{width:min(200px,55%)}
 .hero h1{font-size:clamp(3.2rem,9vw,6rem);font-style:italic;letter-spacing:-.01em}
 .hero .lead{font-size:1.25rem;color:var(--muted);margin:1.1rem 0 1.6rem}
@@ -54,7 +75,7 @@ h2:first-of-type{margin-top:1.4rem}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin:1rem 0 2rem}
 .tile{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;color:var(--ink)}
 .tile:hover{border-color:var(--accent)}
-.tile .pic{display:block;aspect-ratio:4/3;background-color:#1a1626;background-size:cover,auto 45%;background-position:center;background-repeat:no-repeat;border-bottom:1px solid var(--line)}
+.tile .pic{display:block;aspect-ratio:4/3;background-color:var(--pic);background-size:cover,auto 45%;background-position:center;background-repeat:no-repeat;border-bottom:1px solid var(--line)}
 .tile .t{display:block;padding:.9rem 1.1rem 1.1rem}
 .tile h2{font-size:1.45rem;margin:0 0 .15rem}
 .tile p{margin:0;color:var(--muted);font-size:.98rem;line-height:1.45}
@@ -63,19 +84,26 @@ h2:first-of-type{margin-top:1.4rem}
 .entry::before{content:"";position:absolute;left:-6px;top:1.5rem;width:10px;height:10px;border-radius:50%;background:var(--accent)}
 .entry h3{font-size:1.4rem}
 .entry .meta{color:var(--muted);font-size:.95rem;margin:.1rem 0 .5rem}
-.bullets{padding-left:1.1rem;max-width:38em}
-.bullets li{margin-bottom:.35rem}
-.bullets li::marker{color:var(--accent)}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.2rem}
 .card h3{font-size:1.3rem;margin-bottom:.4rem}
 .card p{margin:0;color:var(--muted);font-size:.98rem;line-height:1.55}
 
-.art{margin:0;aspect-ratio:4/5;background:var(--surface);border:1px dashed var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:1rem;font-size:.95rem}
-.art img{width:100%;height:100%;object-fit:cover;border-radius:10px}
-.photo{max-width:38em;aspect-ratio:3/2;margin:0 0 1.6rem;background:var(--surface);border:1px dashed var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:1rem;font-size:.95rem}
-.photo img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.photo{max-width:38em;margin:0 0 1.6rem}
+.photo img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+.photo figcaption{color:var(--muted);font-size:.95rem;margin-top:.4rem}
+.portrait{max-width:22rem}
+
+/* Scrolling tiles: swipe or scroll sideways; hover (or tap/focus) reveals the description */
+.rail{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.3rem .2rem 1rem;margin:0 0 1rem;scrollbar-color:var(--accent) var(--line);scrollbar-width:thin}
+.slide{position:relative;flex:0 0 min(280px,78%);aspect-ratio:4/5;margin:0;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--pic);scroll-snap-align:start;cursor:pointer}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.slide figcaption{position:absolute;inset:auto 0 0 0;padding:2.2rem 1rem .9rem;background:linear-gradient(to top,rgba(21,18,31,.94) 60%,transparent);color:#ece4ee;font-size:.98rem;line-height:1.45;opacity:0;transform:translateY(.6rem);transition:opacity .25s,transform .25s}
+.slide figcaption strong{display:block;font-family:var(--display);font-size:1.3rem;font-weight:600;margin-bottom:.15rem}
+.slide:hover figcaption,.slide:focus figcaption,.slide:focus-within figcaption{opacity:1;transform:none}
+.slide:hover img,.slide:focus img{transform:scale(1.04)}
+.hint{color:var(--muted);font-size:.9rem;margin:-.4rem 0 .8rem}
 
 .tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;list-style:none}
 .tags li{padding:.2rem .85rem;border:1px solid var(--line);border-radius:99px;background:var(--surface);font-size:.95rem}
@@ -95,13 +123,15 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   nav a{padding:.1rem 0;border-left:0;border-bottom:2px solid transparent}
   nav a[aria-current="page"]{border-bottom-color:var(--accent)}
   main{padding-top:2rem}
-  .hero{min-height:32vh}
+  .hero{min-height:30vh}
+  .slide figcaption{opacity:1;transform:none;padding-top:1.6rem}
 }
 </style>
 </head>
 <body>
 
 <div class="bgpat" aria-hidden="true"></div>
+<header class="banner" role="img" aria-label="Sky"></header>
 
 <div class="wrap">
 <aside>
@@ -116,6 +146,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
     <a href="#contact">Contact</a>
     <a href="cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
   </nav>
+  <button class="toggle" id="theme" type="button">Light mode</button>
 </aside>
 
 <main>
@@ -125,14 +156,14 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   <div class="hero">
     <img class="orn" src="ornaments/orn5.png" alt="">
     <h1 id="h-home">Vaaruni Suresh</h1>
-    <p class="lead">neuroscience researcher | classical dancer | clean mug enthusiast </p>
+    <p class="lead">neuroscience | engineering | classical dance</p>
   </div>
   <div class="tiles">
-    <a class="tile" href="#about"><span class="pic" style="background-image:url('images/about.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>About me</h2></span></a>
-    <a class="tile" href="#research"><span class="pic" style="background-image:url('images/research.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Research</h2><p>Brain networks, ageing, and the tools to measure them.</p></span></a>
-    <a class="tile" href="#education"><span class="pic" style="background-image:url('images/education.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Education &amp; skills</h2><p>Degrees and technical skills.</p></span></a>
-    <a class="tile" href="#creative"><span class="pic" style="background-image:url('images/dance.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Dance &amp; art</h2><p>Bharatanatyam, ballet, murals and paintings.</p></span></a>
-    <a class="tile" href="#writing"><span class="pic" style="background-image:url('images/writing.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Writing</h2><p>Essays and fiction on memory and the self.</p></span></a>
+    <a class="tile" href="#about"><span class="pic" style="background-image:url('images/portrait.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>About Me</h2></span></a>
+    <a class="tile" href="#research"><span class="pic" style="background-image:url('images/survived_lab.PNG'),url('ornaments/orn5.png')"></span><span class="t"><h2>Research</h2><p></p></span></a>
+    <a class="tile" href="#education"><span class="pic" style="background-image:url('ornaments/orn5.png')"></span><span class="t"><h2>Education &amp; Skills</h2><p></p></span></a>
+    <a class="tile" href="#creative"><span class="pic" style="background-image:url('images/dance.jpg'),url('ornaments/orn5.png');background-position:center 15%,center"></span><span class="t"><h2>Dance &amp; art</h2><p>Bharatanatyam, ballet, murals and paintings.</p></span></a>
+    <a class="tile" href="#writing"><span class="pic" style="background-image:url('ornaments/orn5.png')"></span><span class="t"><h2>Writing</h2><p></p></span></a>
   </div>
 </section>
 
@@ -140,8 +171,8 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
 <section class="page" id="about" aria-labelledby="h-about">
   <h1 id="h-about">About me</h1>
   <img class="orn" src="ornaments/orn3.png" alt="">
-  <div class="photo"><!-- Replace this box with: <img src="images/portrait.jpg" alt="Vaaruni smiling"> -->Add a portrait: images/portrait.jpg</div>
-  
+  <figure class="photo portrait"><img src="images/portrait.jpg" alt="Vaaruni smiling"></figure>
+
   <p>I’m a neuroscientist and engineer who studies how brain networks change with age and disease, and I like building the tools that make that possible. Memory is central to everything I do: in the dance studio, where I love learning choreographies that are decades old and making them my own; in the lab, analysing neural data; and at my desk, writing essays on how lives are lived and remembered. You can find bits of each of these here, and I’d love to hear from you if any of them interest you. <a href="#contact">Get in touch</a>.</p>
   <p>My work has moved across scales, from regenerating <em>Hydra</em> to brain-computer interfaces, diffusion MRI of stroke, rat electrophysiology, and now EEG-fMRI in clinical populations.</p>
 </section>
@@ -158,11 +189,20 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
     <div class="card"><h3>Tools for neuroscience</h3><p>Hardware and pipelines to measure the brain, from behavioural arenas and circuit boards to BCIs and EEG analysis.</p></div>
   </div>
 
-  <p style="margin-top:1.6rem">The details of my research experience and projects are on my <a href="cv.pdf" target="_blank" rel="noopener">CV</a>.</p>
+  <h2>From the lab</h2>
+  <p class="hint">Scroll sideways. Hover over a photo (or tap it) to read more.</p>
+  <div class="rail" tabindex="0" aria-label="Research photos">
+    <figure class="slide" tabindex="0">
+      <img src="images/rewardwell_prototyping.jpg" alt="Prototyping the reward well" loading="lazy">
+      <figcaption><strong>Reward well prototyping for a two-forced choice behavioural experiments</strong></figcaption>
+    </figure>
+    <figure class="slide" tabindex="0">
+      <img src="images/sci_scaffold.jpg" alt="Scientific scaffold" loading="lazy">
+      <figcaption><strong>Graphene-collagen bioprinted scaffolding to aid regeneration in spinal cord injury</strong></figcaption>
+    </figure>
+  </div>
 
-  <h2>Related writing</h2>
-  <p><a href="#writing">The Object and the Abject</a> is an essay on the extended mind, affect and the self, drawing on my neuroscience background.</p>
-</section>
+  <p style="margin-top:1.2rem">The details of my research experience and projects are on my <a href="cv.pdf" target="_blank" rel="noopener">CV</a>.</p>
 
 <!-- EDUCATION & SKILLS -->
 <section class="page" id="education" aria-labelledby="h-edu">
@@ -196,15 +236,22 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   <img class="orn" src="ornaments/orn6.png" alt="">
 
   <h2>Dance</h2>
-  <div class="photo"><!-- Replace this box with: <img src="images/dance-hero.jpg" alt="Vaaruni performing"> -->Add a performance photo: images/dance-hero.jpg</div>
-  <p>I’ve trained in classical ballet and Bharatanatyam for over fifteen years. Dance is where I learned discipline, patience and how to find artistry in repetition.</p>
-
-  <h2>Art</h2>
-  <p class="sub">Murals, paintings, and experiments.</p>
-  <div class="grid">
-    <figure class="art"></figure>
-    <figure class="art"></figure>
-    <figure class="art"></figure>
+  <p>I’ve trained in classical ballet and Bharatanatyam for over fifteen years. Dance is where I learned discipline, patience and how to find artistry in repetition. I also make art sometimes.</p>
+  <div class="rail" tabindex="0" aria-label="Dance photos">
+    <figure class="slide" tabindex="0">
+      <img src="images/dance-hero.jpg" alt="Vaaruni dancing" loading="lazy">
+      <figcaption><strong>Performance</strong>Add the piece, style and year here.</figcaption>
+    </figure>
+    <figure class="slide" tabindex="0">
+      <img src="images/dance_group.jpg" alt="Group dance performance" loading="lazy">
+      <figcaption><strong>Group piece</strong>Add the piece, company and year here.</figcaption>
+    </figure>
+    <figure class="slide" tabindex="0">
+      <img src="images/piece1.jpg" alt="Art piece 1" loading="lazy">
+    </figure>
+    <figure class="slide" tabindex="0">
+      <img src="images/piece2.JPG" alt="Art piece 2" loading="lazy">
+    </figure>
   </div>
 </section>
 
@@ -259,6 +306,8 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* Page switching */
 var pages = document.querySelectorAll('.page'), links = document.querySelectorAll('nav a');
 function show(first){
   var id = (location.hash || '#home').slice(1), el = document.getElementById(id);
@@ -272,6 +321,21 @@ function show(first){
 }
 window.addEventListener('hashchange', function(){ show(false); });
 show(true);
+
+/* Dark / light toggle */
+var root = document.documentElement, btn = document.getElementById('theme');
+function label(){
+  var dark = root.getAttribute('data-theme') === 'dark';
+  btn.textContent = dark ? 'Light mode' : 'Dark mode';
+  btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+}
+btn.addEventListener('click', function(){
+  var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  try{ localStorage.setItem('theme', next); }catch(e){}
+  label();
+});
+label();
 </script>
 </body>
 </html>
