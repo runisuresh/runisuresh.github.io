@@ -41,10 +41,7 @@ p{max-width:38em;margin:0 0 1.1rem}
 ul{margin:0}
 
 .bgpat{position:fixed;inset:0;z-index:0;pointer-events:none;background:url("ornaments/orn5.png") repeat;background-size:680px;opacity:var(--pat)}
-
-/* Sky header */
-.banner{position:relative;z-index:1;height:clamp(150px,28vh,280px);background:linear-gradient(to bottom,transparent 55%,var(--bg)),url("images/sky.JPG") center/cover no-repeat var(--pic)}
-
+  
 .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;display:grid;grid-template-columns:190px minmax(0,1fr);gap:3rem;padding:0 1.5rem}
 aside{position:sticky;top:0;align-self:start;height:100vh;padding:2rem 0;display:flex;flex-direction:column;gap:1.6rem}
 .logo{font-family:var(--display);font-style:italic;font-size:1.9rem;line-height:1.1;color:var(--ink);text-decoration:none}
@@ -140,11 +137,10 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#research">Research</a>
-    <a href="#education">Education &amp; skills</a>
-    <a href="#creative">Dance &amp; art</a>
+    <a href="#education">Education</a>
+    <a href="#creative">The Arts</a>
     <a href="#writing">Writing</a>
     <a href="#contact">Contact</a>
-    <a href="cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
   </nav>
   <button class="toggle" id="theme" type="button">Light mode</button>
 </aside>
@@ -160,9 +156,9 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   </div>
   <div class="tiles">
     <a class="tile" href="#about"><span class="pic" style="background-image:url('images/portrait.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>About Me</h2></span></a>
-    <a class="tile" href="#research"><span class="pic" style="background-image:url('images/survived_lab.PNG'),url('ornaments/orn5.png')"></span><span class="t"><h2>Research</h2><p></p></span></a>
-    <a class="tile" href="#education"><span class="pic" style="background-image:url('ornaments/orn5.png')"></span><span class="t"><h2>Education &amp; Skills</h2><p></p></span></a>
-    <a class="tile" href="#creative"><span class="pic" style="background-image:url('images/dance.jpg'),url('ornaments/orn5.png');background-position:center 15%,center"></span><span class="t"><h2>Dance &amp; art</h2><p>Bharatanatyam, ballet, murals and paintings.</p></span></a>
+    <a class="tile" href="#research"><span class="pic" style="background-image:url('images/survived_lab.PNG'),url('ornaments/orn5.png');background-position:center 10%,center"></span><span class="t"><h2>Research</h2><p></p></span></a>
+    <a class="tile" href="#education"><span class="pic" style="background-image:url('ornaments/orn5.png')"></span><span class="t"><h2>Education</h2><p></p></span></a>
+    <a class="tile" href="#creative"><span class="pic" style="background-image:url('images/dance.jpg'),url('ornaments/orn5.png');background-position:center 10%,center"></span><span class="t"><h2>The Arts</h2></h2><p></p></span></a>
     <a class="tile" href="#writing"><span class="pic" style="background-image:url('ornaments/orn5.png')"></span><span class="t"><h2>Writing</h2><p></p></span></a>
   </div>
 </section>
@@ -190,11 +186,10 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   </div>
 
   <h2>From the lab</h2>
-  <p class="hint">Scroll sideways. Hover over a photo (or tap it) to read more.</p>
   <div class="rail" tabindex="0" aria-label="Research photos">
     <figure class="slide" tabindex="0">
       <img src="images/rewardwell_prototyping.jpg" alt="Prototyping the reward well" loading="lazy">
-      <figcaption><strong>Reward well prototyping for a two-forced choice behavioural experiments</strong></figcaption>
+      <figcaption><strong>Reward well prototyping for two-alternative forced-choice behavioural experiments</strong></figcaption>
     </figure>
     <figure class="slide" tabindex="0">
       <img src="images/sci_scaffold.jpg" alt="Scientific scaffold" loading="lazy">
@@ -203,11 +198,12 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   </div>
 
   <p style="margin-top:1.2rem">The details of my research experience and projects are on my <a href="cv.pdf" target="_blank" rel="noopener">CV</a>.</p>
+  </section>
 
 <!-- EDUCATION & SKILLS -->
 <section class="page" id="education" aria-labelledby="h-edu">
-  <h1 id="h-edu">Education &amp; skills</h1>
-  <img class="orn" src="ornaments/orn6.png" alt="">
+  <h1 id="h-edu">Education</h1>
+  <img class="orn" src="ornaments/orn5.png" alt="">
 
   <h2>Education</h2>
   <div class="entry">
@@ -232,7 +228,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
 
 <!-- DANCE & ART -->
 <section class="page" id="creative" aria-labelledby="h-creative">
-  <h1 id="h-creative">Dance &amp; art</h1>
+  <h1 id="h-creative">The Arts</h1>
   <img class="orn" src="ornaments/orn6.png" alt="">
 
   <h2>Dance</h2>
@@ -294,7 +290,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
 <!-- CONTACT -->
 <section class="page" id="contact" aria-labelledby="h-contact">
   <h1 id="h-contact">Contact</h1>
-  <img class="orn" src="ornaments/orn3.png" alt="">
+  <img class="orn" src="ornaments/orn5.png" alt="">
   <p><a href="mailto:vaaruni16@gmail.com">vaaruni16@gmail.com</a></p>
   <p><a href="cv.pdf" target="_blank" rel="noopener">Download my CV</a> · <a href="https://github.com/runisuresh" target="_blank" rel="noopener">GitHub</a></p>
 </section>
