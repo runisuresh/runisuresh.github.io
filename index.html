@@ -6,8 +6,7 @@
 <title>Vaaruni Suresh</title>
 <meta name="description" content="Vaaruni Suresh: Personal Website">
 <script>
-
-  (function(){
+(function(){
   var t=null;
   try{t=localStorage.getItem('theme')}catch(e){}
   if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
@@ -41,7 +40,7 @@ p{max-width:38em;margin:0 0 1.1rem}
 ul{margin:0}
 
 .bgpat{position:fixed;inset:0;z-index:0;pointer-events:none;background:url("ornaments/orn5.png") repeat;background-size:680px;opacity:var(--pat)}
-  
+
 .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;display:grid;grid-template-columns:190px minmax(0,1fr);gap:3rem;padding:0 1.5rem}
 aside{position:sticky;top:0;align-self:start;height:100vh;padding:2rem 0;display:flex;flex-direction:column;gap:1.6rem}
 .logo{font-family:var(--display);font-style:italic;font-size:1.9rem;line-height:1.1;color:var(--ink);text-decoration:none}
@@ -69,10 +68,10 @@ h2:first-of-type{margin-top:1.4rem}
 .hero h1{font-size:clamp(3.2rem,9vw,6rem);font-style:italic;letter-spacing:-.01em}
 .hero .lead{font-size:1.25rem;color:var(--muted);margin:1.1rem 0 1.6rem}
 
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin:1rem 0 2rem}
-.tile{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;color:var(--ink)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.2rem;margin:1rem 0 2rem}
+.tile{display:block;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;color:var(--ink)}
 .tile:hover{border-color:var(--accent)}
-.tile .pic{display:block;aspect-ratio:4/3;background-color:var(--pic);background-size:cover,auto 45%;background-position:center;background-repeat:no-repeat;border-bottom:1px solid var(--line)}
+.tile .pic{display:block;width:100%;aspect-ratio:4/3;background-color:var(--pic);background-size:cover;background-position:center;background-repeat:no-repeat;border-bottom:1px solid var(--line)}
 .tile .t{display:block;padding:.9rem 1.1rem 1.1rem}
 .tile h2{font-size:1.45rem;margin:0 0 .15rem}
 .tile p{margin:0;color:var(--muted);font-size:.98rem;line-height:1.45}
@@ -99,8 +98,12 @@ h2:first-of-type{margin-top:1.4rem}
 .slide figcaption strong{display:block;font-family:var(--display);font-size:1.3rem;font-weight:600;margin-bottom:.15rem}
 .slide:hover figcaption,.slide:focus figcaption,.slide:focus-within figcaption{opacity:1;transform:none}
 .slide:hover img,.slide:focus img{transform:scale(1.04)}
-  #creative .slide{flex:0 0 min(380px,85%);aspect-ratio:auto;height:260px}
-  #creative .slide img{width:100%;height:100%;object-fit:contain}
+
+/* Arts: smaller, wider, uncropped */
+#creative .slide{flex:0 0 min(380px,85%);aspect-ratio:auto;height:240px}
+#creative .slide img{width:100%;height:100%;object-fit:contain}
+#creative .slide:hover img{transform:none}
+
 .hint{color:var(--muted);font-size:.9rem;margin:-.4rem 0 .8rem}
 
 .tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;list-style:none}
@@ -157,10 +160,10 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   </div>
   <div class="tiles">
     <a class="tile" href="#about"><span class="pic" style="background-image:url('images/portrait.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>About Me</h2></span></a>
-    <a class="tile" href="#research"><span class="pic" style="background-image:url('images/survived_lab.PNG'),url('ornaments/orn5.png');background-position:center 10%,center"></span><span class="t"><h2>Research</h2><p></p></span></a>
-    <a class="tile" href="#education"><span class="pic" style="background-image:url('images/education.jpg')"></span><span class="t"><h2>Education</h2><p></p></span></a>
-    <a class="tile" href="#creative"><span class="pic" style="background-image:url('images/dance.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>The Arts</h2><p></p></span></a>
-    <a class="tile" href="#writing"><span class="pic" style="background-image:url('images/writing.JPG')"></span><span class="t"><h2>Writing</h2><p></p></span></a>
+    <a class="tile" href="#research"><span class="pic" style="background-image:url('images/survived_lab.PNG'),url('ornaments/orn5.png');background-position:center 10%,center"></span><span class="t"><h2>Research</h2></span></a>
+    <a class="tile" href="#education"><span class="pic" style="background-image:url('images/education.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>Education</h2></span></a>
+    <a class="tile" href="#creative"><span class="pic" style="background-image:url('images/dance.jpg'),url('ornaments/orn5.png')"></span><span class="t"><h2>The Arts</h2></span></a>
+    <a class="tile" href="#writing"><span class="pic" style="background-image:url('images/writing.JPG'),url('ornaments/orn5.png')"></span><span class="t"><h2>Writing</h2></span></a>
   </div>
 </section>
 
@@ -168,7 +171,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
 <section class="page" id="about" aria-labelledby="h-about">
   <h1 id="h-about">About me</h1>
   <img class="orn" src="ornaments/orn3.png" alt="">
-  <figure class="photo portrait"><img src="images/portrait.jpg"></figure>
+  <figure class="photo portrait"><img src="images/portrait.jpg" alt="Portrait of Vaaruni"></figure>
 
   <p>I’m a neuroscientist and engineer who studies how brain networks change with age and disease, and I like building the tools that make that possible. Memory is central to everything I do: in the dance studio, where I love learning choreographies that are decades old and making them my own; in the lab, analysing neural data; and at my desk, writing essays on how lives are lived and remembered. You can find bits of each of these here, and I’d love to hear from you if any of them interest you. <a href="#contact">Get in touch</a>.</p>
   <p>My work has moved across scales, from regenerating <em>Hydra</em> to brain-computer interfaces, diffusion MRI of stroke, rat electrophysiology, and now EEG-fMRI in clinical populations.</p>
@@ -217,7 +220,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   <h2>Education</h2>
   <div class="entry">
     <h3>MS in Biomedical Engineering</h3>
-    <div class="meta">Carnegie Mellon University, Pittsburgh · May 2025 </div>
+    <div class="meta">Carnegie Mellon University, Pittsburgh · May 2025</div>
   </div>
   <div class="entry">
     <h3>BSc in Biology, minor in Data, Democracy and Development</h3>
@@ -243,16 +246,16 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   <p>I’ve trained in classical ballet and Bharatanatyam for over fifteen years. Dance is where I learned discipline, patience and how to find artistry in repetition. I also make art sometimes.</p>
   <div class="rail" tabindex="0" aria-label="Dance and art photos">
     <figure class="slide">
-      <img src="images/dance-hero.jpg" alt="Vaaruni dancing" loading="lazy">
+      <img src="images/dance-hero.jpg" alt="Vaaruni dancing">
     </figure>
     <figure class="slide">
-      <img src="images/dance_group.jpg" alt="Group dance performance" loading="lazy">
+      <img src="images/dance_group.jpg" alt="Group dance performance">
     </figure>
     <figure class="slide">
-      <img src="images/piece1.jpg" alt="Art piece 1" loading="lazy" style="object-position:50% 50%">
+      <img src="images/piece1.jpg" alt="Art piece 1">
     </figure>
     <figure class="slide">
-      <img src="images/piece2.JPG" alt="Art piece 2" loading="lazy">
+      <img src="images/piece2.JPG" alt="Art piece 2">
     </figure>
   </div>
 </section>
@@ -272,7 +275,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   <div class="piece">
     <h3><a href="https://4runes.substack.com/p/field-notes-from-a-rememberer" target="_blank" rel="noopener">Field Notes of a Rememberer</a></h3>
     <div class="meta">Essay · May 2026</div>
-    <p>What stories lose when they're retold</p>
+    <p>What stories lose when they’re retold</p>
   </div>
   <div class="piece">
     <h3><a href="https://4runes.substack.com/p/on-sad-stories-and-self-identity" target="_blank" rel="noopener">On Sad Stories and Self-Identity</a></h3>
