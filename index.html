@@ -116,11 +116,13 @@ h2:first-of-type{margin-top:1.4rem}
 footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-size:.95rem;padding:2rem 1rem 3rem}
 #contact p:last-of-type {
   max-width: none;
+  white-space: nowrap;
 }
 
-#contact p:last-of-type a {
-  display: inline;
-  white-space: nowrap;
+@media (max-width:760px) {
+  #contact p:last-of-type {
+    white-space: normal;
+  }
 }
 @media (max-width:760px){
   .wrap{grid-template-columns:1fr;gap:0}
