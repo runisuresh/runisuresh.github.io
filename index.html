@@ -114,7 +114,14 @@ h2:first-of-type{margin-top:1.4rem}
 .piece p{margin:.3rem 0 0}
 
 footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-size:.95rem;padding:2rem 1rem 3rem}
+#contact p:last-of-type {
+  max-width: none;
+}
 
+#contact p:last-of-type a {
+  display: inline;
+  white-space: nowrap;
+}
 @media (max-width:760px){
   .wrap{grid-template-columns:1fr;gap:0}
   aside{position:static;height:auto;padding:1.5rem 0 0;gap:1rem}
@@ -307,7 +314,6 @@ footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-siz
   </div>
 </section>
 
-<!-- CONTACT -->
 <!-- CONTACT -->
 <section class="page" id="contact" aria-labelledby="h-contact">
   <h1 id="h-contact">Contact</h1>
